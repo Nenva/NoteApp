@@ -23,6 +23,7 @@ class NotesAdapter(
         holder.itemView.apply {
             textTitleNote.text = notes[position].title
             textContentNote.text = notes[position].content
+            textDate.text = notes[position].creationDate
         }
     }
 

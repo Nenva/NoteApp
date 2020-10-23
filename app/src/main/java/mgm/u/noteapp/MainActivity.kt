@@ -3,9 +3,9 @@ package mgm.u.noteapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.item_row_notes.*
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,7 +22,10 @@ class MainActivity : AppCompatActivity() {
         buttonCreate.setOnClickListener {
             val title = editTitleNote.text.toString()
             val content = editContentNote.text.toString()
-            val note = Note(title, content)
+            val current = LocalDateTime.now()
+            val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
+            val creationDate = current.format(formatter)
+            val note = Note(title, content, creationDate)
             noteList.add(note)
         }
     }

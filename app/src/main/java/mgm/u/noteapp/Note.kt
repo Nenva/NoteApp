@@ -1,6 +1,7 @@
 package mgm.u.noteapp
 
-data class Note (
+data class Note(
     val title: String,
-    val content: String
+    val content: String,
+    val creationDate: String
     )
