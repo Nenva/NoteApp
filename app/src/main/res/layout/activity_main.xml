@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:padding="20dp"
+    android:orientation="vertical">
+
+   <RelativeLayout
+       android:id="@+id/relativeCreateNote"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+       <EditText
+           android:id="@+id/editTitleNote"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:hint="Insert title note"
+           android:layout_marginTop="8dp"/>
+
+       <EditText
+           android:id="@+id/editContentNote"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:hint="Insert note"
+           android:ellipsize="end"
+           android:maxLines="3"
+           android:layout_marginTop="8dp"
+           android:layout_below="@+id/editTitleNote"/>
+
+       <Button
+           android:id="@+id/buttonCreate"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="Create note"
+           android:layout_marginTop="8dp"
+           android:layout_below="@+id/editContentNote"/>
+
+   </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeDisplayNotes"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </ScrollView>
+    </RelativeLayout>
+</LinearLayout>
